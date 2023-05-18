@@ -1,39 +1,80 @@
 import Navbar from "./Navbar";
-
+import {Link} from 'react-router-dom';
+import "../App.css";
 
 function Home(){
     return(
-        <>
-        <Navbar/>
-        <div style={{display:'flex', marginLeft:30+'px',marginTop:40+'px', border:1+'px solid black',marginRight:30+'px' }}>
-        <div class="card" style={{width: 18+'rem', marginLeft:110+'px'}} >
-  <img src="https://academy.cadenceacademy.in/frontend/default/images/student-login.jpg" class="card-img-top" alt="..."/>
+        <div style={{backgroundColor:"whitesmoke"}}>
+       
+        <center>
+  <div class="card" style={{backgroundColor:"#007a99"}}>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Login as Student</a>
+   <h1 style={{color:"white"}}>Leave Management System</h1> 
+  </div>
+</div>
+</center>
+
+  <div style={{display:'flex', marginLeft:30+'px',marginTop:100+'px',marginRight:30+'px'}}>
+  <div class="card" style={{width: 20+'rem', marginLeft:110+'px', marginRight:30+'px'}} >
+  <img src="https://www.albertamusic.org/wp-content/uploads/icon-blu-company.png"  class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h3 class="card-title"><b>Student Portal</b></h3>
+    <Link to="Login" style={{backgroundColor:"#007a99"}} class="btn btn-primary"><b>Login as Student</b></Link>
+
   </div>
 </div> 
 
-<div class="card" style={{width: 18+'rem',marginLeft:110+'px'}}>
-  <img src="data:image/jpeg;base64,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" class="card-img-top" alt="..." style={{height:160+'px'}}/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Login as Warden</a>
+<div class="card" style={{width: 20+'rem',marginLeft:110+'px',marginRight:30+'px'}}>
+<img src="https://www.albertamusic.org/wp-content/uploads/icon-blu-company.png" class="card-img-top" alt="..."/>
+ <div class="card-body">
+    <h3 class="card-title"><b>Warden Portal</b></h3>
+    <Link to="/wardenregister" style={{backgroundColor:"#007a99"}} class="btn btn-primary"><b>Login as Warden</b></Link>
   </div>
 </div>
 
-<div class="card" style={{width: 18+'rem',marginLeft:110+'px'}}>
-  <img src="data:image/jpeg;base64,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" class="card-img-top" alt="..." style={{height:160+'px'}}/>
+<div class="card" style={{width: 20+'rem',marginLeft:110+'px'}}>
+<img src="https://www.albertamusic.org/wp-content/uploads/icon-blu-company.png" class="card-img-top" alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Login as HOD</a>
+    <h3 class="card-title"><b>HOD Portal</b></h3>
+    <Link to="/Hodregister" style={{backgroundColor:"#007a99"}} class="btn btn-primary"><b>Login as HOD</b></Link>
+ 
+   
   </div>
 </div>
 </div>
-        </>
+{/* <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Hod Portal</h5>
+       
+        <Link to="/Hodregister" style={{backgroundColor:"#007a99"}} class="btn btn-primary"><b>Login as HOD</b></Link>
+ 
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Warden Portal</h5>
+        <Link to="/wardenregister" style={{backgroundColor:"#007a99"}} class="btn btn-primary"><b>Login as Warden</b></Link>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body">
+        <h5 class="card-title">Student Portal</h5>
+        <Link to="Login" style={{backgroundColor:"#007a99"}} class="btn btn-primary"><b>Login as Student</b></Link>
+      </div>
+      
+    </div>
+  </div>
+</div> */}
+        </div>
     )
 }
 
