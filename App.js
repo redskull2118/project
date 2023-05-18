@@ -1,87 +1,80 @@
-const mongoose=require('mongoose');
-const express = require('express') ;
-const app=express();
-const jwt= require("jsonwebtoken");
-const DB='mongodb+srv://redskull:redskull2118@cluster0.ti3awfp.mongodb.net/mernstack?retryWrites=true&w=majority'; mongoose.connect(DB,{ useNewUrlParser:true, useUnifiedTopology:true }).then(()=>{ console.log(`Connected to DB`); }).catch((err)=>{ console.log(err); })
-const User=require('../Backend/models/Usermodel');
-const authenticate= require('../Backend/Controller/authenticate');
-const bcrypt=require('bcrypt');
-const cookieParser = require('cookie-parser')
-app.use(express.json());
-app.use(cookieParser());
+import React from 'react'
+// import axios from 'axios'
+import SignUp from './Component/SignUp'
+import Registration from './Component/Registration'
+import Login from './Component/Login';
+import Home from './Project/Home';
+import About from './Component/About';
+import Try1 from './Component/Try1';
+import { BrowserRouter ,Routes, Route} from 'react-router-dom';
+import Admin from './Project/Admin';
+import WardenRegister from './Project/WardenRegister';
 
-app.post("/register",(req,res)=>{ 
-    const {username,email,password}=req.body; 
-    console.log(req.body); 
-    if(!username || !email || !password) {
-     return res.status(400).json({error:"Please fill field"});
-     }
-     User.findOne({email:email}).then((userexists)=>{ 
-    if(userexists) { 
-    return res.status(404).json({err:"email already exists"}); 
-    }
-     const user=new User({username,email,password});///passing data to the schema and then send to nongodb
-     user.save().then(()=>{ 
-    return res.status(200).json({Message:req.body});
-     }).catch((err)=>{ return res.status(500).json({err:"failed to register"}); });
-    }).catch((err)=>{ console.log(err); }) });
-// const createToken= async ()=>{
-//   const token= jwt.sign({_id:"1abcg35673sj4j5jk654339283"},"PARVEZKHANHALDWANIKATHGODAMHDHFJKDKKIXJDJKDKDKKS");
-//   console.log(token);
-//   const verify = await jwt.verify(token ,"PARVEZKHANHALDWANIKATHGODAMHDHFJKDKKIXJDJKDKDKKS");
-//   console.log(verify);
+
+import HodRegister from './Project/HodRegister';
+
+// import ComponentF from './Component/ComponentF';
+// import ComponentE from './Component/ComponentE';
+export const userContext =React.createContext();
+export const ChannelContext =React.createContext();
+const App = () => {
+  // const [users, setUsers] = useState([])
+  // const getData = async() => {
+  //   const res = await axios.get('/api/users')
+  //   setUsers(res.data)
+  // }
+
+  // useEffect(() => {
+  //   getData()
+  // }, [])
+ 
+  return (
+    <>
+    {/* <userContext.Provider value={"name"}>
+    <ComponentF/>
+    </userContext.Provider>
+    <ChannelContext.Provider value={"hsdjhsfkgsdhjdsffhhsdjdfsdsj"}>
+    <userContext.Provider value={"name"}>
+      <ComponentE/>
+      </userContext.Provider>
+      </ChannelContext.Provider> */}
+    <BrowserRouter>
+      <Routes>
+      {/* <Route exact path='/' element={<Try1 name="Parvez"/>}></Route> */}
+
+        <Route exact path='/' element={<Home/>}></Route>
+        <Route exact path='/register' element={<Registration/>}></Route>
+        <Route exact path='/admin' element={<Admin/>}></Route>
+        <Route path='/Login' element={<Login/>}></Route> 
+        <Route path='/wardenregister' element={<WardenRegister/>}></Route> 
+        <Route path='/Hodregister' element={<HodRegister/>}></Route> 
+      </Routes>
+    </BrowserRouter>
+    {/* <div>
+      {users.map(u => <h4 key={u._id}>userName : {u.name}</h4>)}  
+    </div> */}
+    {/* <SignUp/> */}
+    {/* // <Registration/>
+    // <Login/> */}
+    </>
+  )
+}
+
+export default App
+
+
+
+
+// import Home from './Component/Home'
+// import './App.css';
+// import Registration from './Component/Registration';
+
+// function App() {
+//   return (
+//     <div className="App">
+//      <Registration/>
+//     </div>
+//   );
 // }
-// createToken();
-    app.post("/Login", async (req,res)=>
-    {
-     try{ 
-        let token;
-        const {email,password}=req.body; 
-        console.log(req.body); 
 
-        if(!email || !password) {
-            console.log("Please fill field");
-            return res.status(400).json({error:"Please fill field"});
-        }
-         const userLogin= await User.findOne({email :email});
-         if(userLogin)
-         {
-            const isMatch= await bcrypt.compare(password ,userLogin.password);
-            token= await userLogin.generateAuthToken();
-            res.cookie("jwttoken" ,token ,{
-                expires :new Date(Date.now() +25892000000),
-                httpOnly:true
-            });
-
-            if(!isMatch)
-            {
-                console.log("Invalid password");
-               return res.status(422).json({error:"Invalid password"});
-            }
-            else
-            {
-                console.log("Logged in");
-              return res.json({message:"Logged in"});
-            }
-           
-         }
-         else
-         {
-            console.log("Invalid email");
-            return res.status(422).json({error:"Invalid email"});
-         }
-       
-    }
-    catch(err){
-          console.log(err);
-    }
-    });
-
-    app.get("/about",authenticate,(req,res)=>{
-        // console.log(req.rootUser);
-
-        res.send(req.rootUser);
-    });
-
-    app.listen(8000);
-         
+// export default App;
