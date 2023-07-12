@@ -1,283 +1,216 @@
-import {Link} from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import StudentApplyLeaveNavbar from './StudentApplyLeaveNavbar'
-// import WorkingDayLeave from './WorkingDayLeave'
+import React from 'react';
 import '../App.css';
-import StudentApplyLeave from './StudentApplyLeave'
-import AWDL from './AWDL';
-
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBIcon,
+  MDBBtn
+} from 'mdb-react-ui-kit';
+import { fahtml5 } from "react-icons/fa";
 function Home(){
-  // const [users, setUsers] = useState([]);
-  
-  // async function login(){
-
-  //   const response = await fetch('http://localhost:8000/abc', {
-  //     method:'GET',
-  //     headers:{
-  //       'Content-Type':'application/json'
-  //     }
-     
-  //   });
-  //   const actualdata = await response.json();
-  //   setUsers(actualdata.data);
-  //   console.log(actualdata.data);
-  //   // return data;
-  // } 
-
-  // useEffect(()=>{
-  //   login();
-  // },[])
-
-  // const color=(a)=>{
-  //   if(a=='pending')
-  //   {
-  //     return(
-  //       <>
-  //       <p style={{color:"yellow"}}> Pending</p>
-  //       </>
-  //     )
-  //   }
-  //   else if(a=='approved')
-  //   {
-  //     return(
-  //       <>
-  //       <p style={{color:"green"}}>Approved</p>
-  //       </>
-  //     )
-  //   }
-  //   else{
-  //     return(
-  //       <>
-  //       <p style={{color:"red"}}>Rejected</p>
-  //       </>
-  //     )
-
-  //   }
-  // }
-
     return(
-        <>
-        <StudentApplyLeaveNavbar/>
       
-      <div >
-      {/* <div class="row " style={{margin:70+'px',marginTop:30+'px'}}>
-  <div class="col sha hov " >
-    <div class="card h-100 border comcol  " style={{border:'none'}}>
-      
-     <div class="card-body comcol ">
-        <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431"}}><b>Remaining Leaves</b></h2></center>
-        
-      </div>
-     
-    </div>
+
+
+  <div style={{backgroundColor:"#262626",color:"white"}}>
+    <div style={{marginBottom:100+"px"}} id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+  
+  <div class="carousel-indicators">
+    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"
+      aria-label="Slide 3"></button>
   </div>
 
-  <div class="col sha hov " >
-    <div class="card h-100 border comcol  " style={{border:'none'}}>
-      
-     <div class="card-body comcol " style={{paddingTop:37+'px'}}>
-        <center><h2 class="card-title " ><Link to="/studentapplyleave" className='leave'>Remaining Leaves</Link></h2></center>
-        
-      </div>
-     
+ 
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <img src="https://quotefancy.com/media/wallpaper/3840x2160/2000881-Joel-Spolsky-Quote-It-s-harder-to-read-code-than-to-write-it.jpg" class="d-block w-100"
+        alt="Sunset Over the City" />
+    </div>
+
+  
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/originals/97/17/f5/9717f587fbe2819fe61fd1f6d09d0358.jpg" class="d-block w-100"
+        alt="Canyon at Nigh" />
+    </div>
+
+   
+    <div class="carousel-item">
+      <img src="https://quotefancy.com/media/wallpaper/3840x2160/2000910-Joel-Spolsky-Quote-Good-software-like-wine-takes-time.jpg" class="d-block w-100"
+        alt="Cliff Above a Stormy Sea" />
     </div>
   </div>
-
-
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      <div class="card-body comcol">
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px'}}>
-
-      <button type="text"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style={{background:'none',boxShadow:'none',paddingTop:8+'px', border:'none', color:" #0E2431"}}>
- Apply Working Day leave 
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Apply Leave</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+ 
+  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample"
+    data-mdb-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample"
+    data-mdb-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="card" style={{marginLeft:150+"px",marginRight:150+"px",display:"flex",backgroundColor:"#262626",color:"white"}}>
+  <div class="card-header"><h1>🚀Let's Code...</h1></div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>Let's Code is the best platform to help you enhance your skills, expand your knowledge and prepare for technical interviews. Create Account Start Exploring Explore is a well-organized tool that helps you get the most out of LeetCode by providing structure to guide your ….</p>
+     
+    </blockquote>
+  </div>
+</div>
+<center>
+<div class="card" style={{backgroundColor:"#262626",color:"white",marginTop:50+"px"}}>
+<center>
+  <div class="card-body un">
+   <h2><span>📚Courses</span></h2>
+  </div>
+  </center>
+</div>
+</center>
+<div class="row row-cols-1 row-cols-md-2 g-4" style={{marginTop:20+"px",marginLeft:180+"px",marginRight:180+"px"}}>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://codelearn.io/CodeCamp/CodeCamp/Upload/Course/e0a85ff6c0c64720ad582bdec3741cd1.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+      <div class="card-body"   style={{backgroundColor:"black",color:"white"}}>
+        <h3>Algorithms and Data Structures</h3>
       </div>
-      <div class="modal-body"><AWDL/></div>
-      
+    </div>
+  </div>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://codelearn.io/CodeCamp/CodeCamp/Upload/Course/8396de4f1f30479aac948a0ac0ca22da.jpg" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>Advance Algorithms</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://cdn.educba.com/academy/wp-content/uploads/2019/03/what-is-system-design.jpg" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>System Design for Beginners</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://www.techfry.com/images/articles/php/object-oriented-programming.jpg" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>Object-Oriented Design</h3>
+      </div>
     </div>
   </div>
 </div>
-        
-        
-        </h2></center>
-      </div>
-      
-    </div>
-  </div> 
-   <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      <div class="card-body comcol ">
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px'}}>
-      <button type="text"  data-mdb-toggle="modal" data-mdb-target="#exampleModal" style={{background:'none',boxShadow:'none',paddingTop:8+'px', border:'none', color:" #0E2431"}}>
- Apply holiday leave 
-</button>
-
-
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header ap-col">
-        <h5 class="modal-title ap-col" id="exampleModalLabel">Apply Leave</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body"><StudentApplyLeave/></div>
-      
-    </div>
+<center>
+<div class="card" style={{backgroundColor:"#262626",color:"white",marginTop:50+"px"}}>
+<center>
+  <div class="card-body un">
+   <h2><span>📝Lessons</span></h2>
   </div>
+  </center>
 </div>
-        
-        
-        </h2></center>
+</center>
+<div class="row row-cols-1 row-cols-md-2 g-4" style={{marginTop:20+"px",marginLeft:280+"px",marginRight:280+"px"}}>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://kinsta.com/wp-content/uploads/2020/08/html-vs-css.png" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+      <div class="card-body"   style={{backgroundColor:"black",color:"white"}}>
+        <h3><fahtml5/>Html/CSS</h3>
       </div>
-      
     </div>
   </div>
-</div> */}
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4" style={{margin:70+'px',marginTop:30+'px'}}>
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      
-     <div class="card-body comcol" >
-     <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431"}}><b>Remaining Leaves</b></h2></center>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://mohalicareerpoint.com/wp-content/uploads/2019/11/C.gif" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>C++</h3>
       </div>
-     
+    </div>
+  </div>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://assets-global.website-files.com/606a802fcaa89bc357508cad/61143444834cd54b9b0a88b3_2.png" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>JavaScript</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://th.bing.com/th/id/OIP.lT2MFAkuTPhZW__tqbkF1wHaEo?pid=ImgDet&rs=1" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>Java</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://th.bing.com/th/id/OIP.KVUgc1olTPvjmMml8sbywwHaDh?pid=ImgDet&rs=1" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>React JS</h3>
+      </div>
     </div>
   </div>
   
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-    <Link to='/studentworkingdayleave' style={{textDecoration:"none"}}>
-    <div class="card-body comcol">
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431",textDecoration:"none"}}><b>View H L</b></h2></center>
+  <div class="col">
+    <div class="card hov">
+      <img src="https://qph.fs.quoracdn.net/main-qimg-7491ebc88a52095de31b9d4d8c3170a6" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body"  style={{backgroundColor:"black",color:"white"}}>
+        <h3>Python</h3>
       </div>
-    </Link> 
-    </div>
-  </div>
-
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-    <Link to='/studentworkingdayleave' style={{textDecoration:"none"}}>
-    <div class="card-body comcol">
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431",textDecoration:"none"}}><b>View W D L</b></h2></center>
-      </div>
-    </Link>
-      
     </div>
   </div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<MDBFooter className='text-center text-white' style={{backgroundColor:"#262626",color:"white"}}>
+      <MDBContainer className='p-4 pb-0'>
+        <section className='mb-4'>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+            <MDBIcon fab icon='facebook-f' />
+          </MDBBtn>
 
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+            <MDBIcon fab icon='twitter' />
+          </MDBBtn>
 
-<div class="row row-cols-1 row-cols-md-3 g-4" style={{margin:70+'px'}}>
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      
-    <Link to='/studentapplywdleave' style={{textDecoration:"none"}}>
-    <div class="card-body comcol">
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431",textDecoration:"none"}}><b>Apply W D L</b></h2></center>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+            <MDBIcon fab icon='google' />
+          </MDBBtn>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+            <MDBIcon fab icon='instagram' />
+          </MDBBtn>
+
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+            <MDBIcon fab icon='linkedin-in' />
+          </MDBBtn>
+
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
+            <MDBIcon fab icon='github' />
+          </MDBBtn>
+        </section>
+      </MDBContainer>
+
+      <div className='text-center p-3' style={{ backgroundColor: 'black' }}>
+        © 2020 Copyright:
+        <a className='text-white' href='https://mdbootstrap.com/'>
+          MDBootstrap.com
+        </a>
       </div>
-    </Link>
-     
-    </div>
-  </div>
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-    <Link to='/studentapplyleave' style={{textDecoration:"none"}}>
-    <div class="card-body comcol">
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431",textDecoration:"none"}}><b>Apply H L</b></h2></center>
+    </MDBFooter>
       </div>
-    </Link>
-      
-    </div>
-  </div>
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      <div class="card-body comcol" style={{pointerEvents:"none"}}>
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431"}}><b>Calender</b></h2></center>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4" style={{margin:70+'px'}}>
-  <div class="col sha hov">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      
-     <div class="card-body comcol" style={{pointerEvents:"none"}}>
-     <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431"}}><b>Sports</b></h2></center>
-      </div>
-     
-    </div>
-  </div>
-  <div class="col sha hov ">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      <div class="card-body comcol" style={{pointerEvents:"none"}}>
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431"}}><b>Assignment</b></h2></center> </div>
-      
-    </div>
-  </div>
-  <div class="col sha hov ">
-    <div class="card h-100 comcol border" style={{border:'none'}}>
-      <div class="card-body comcol" style={{pointerEvents:"none"}}>
-      <center><h2 class="card-title" style={{paddingTop:20+'px', paddingBottom:20+'px', color:" #0E2431"}}><b>Change Password</b></h2></center>
-      </div>
-      
-    </div>
-  </div>
-</div>
-</div>
-{/* // <center><h2 style={{marginTop:15+'px',marginBottom:20+'px'}}>Working DAY LEAVE</h2></center>
-
-//       <table class="table " style={{backgroundColor:"rgb(245, 245, 245)",fontFamily:"'Poppins',sans-serif"}}>
-//   <thead style={{backgroundColor:"rgb(222, 238, 252)",color:"#0E2431"}}>
-//     <tr>
-//       <th scope="col">Student Name</th>
-//       <th scope="col">Start Date</th>
-//       <th scope="col">End Date</th>
-//       <th scope="col">Type of Leave</th>
-//       <th scope="col"> WARDEN's Status</th>
-//       <th scope="col"> HOD's Status</th>
-      
-//     </tr>
-//   </thead>
-//   <tbody style={{color:"#6883BC" ,fontFamily:"'Poppins',sans-serif"}}> */}
-   {/* {users.map(a=>{ */}
-{/* //           return(
-//             <tr>
-//       <td>{a.studentname}</td>
-//       <td>{a.startdate}</td>
-//       <td>{a.enddate}</td>
-//       <td>{a.purpose}</td>
-//       <td>{color(a.status)}</td>
-//       <td>{color(a.status)}</td>
-//     </tr>
-
-
-//         // <li>{a.studentname}</li>
-         
-//         )  
-//       })}
-    
-    
-//   </tbody>
-
-// </table> */}
-
-
-        </>
     )
 }
-
 export default Home;
